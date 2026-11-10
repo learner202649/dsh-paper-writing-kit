@@ -1,0 +1,66 @@
+{
+  "schema": "dsh-paper-writing-kit.sources.v1",
+  "generated": "2026-10-28",
+  "note": "安装脚本按此表克隆上游；commit 为编写本套件时验证过的版本，安装时默认取默认分支最新提交。",
+  "components": [
+    {
+      "name": "dsh-paper-studio",
+      "role": "DSH 插件（paper_studio / paper_dev）",
+      "repo": "https://github.com/liuhaolong16/dsh-paper-studio",
+      "version": "3.50.2",
+      "commit": "123ebc9b126137b8fc5e0d35d38f1f0072e361bb",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 liuhaolong16",
+      "distributed_in_repo": false,
+      "install": "clone -> patch bundle entry name -> copy gates/ -> dsh plugin add link:",
+      "modifications": [
+        "plugin/cordis.patch.yml: name dsh-paper-studio-v3 -> dsh-paper-studio",
+        "gates/* copied into research-paper-playbook (playbook_root)"
+      ]
+    },
+    {
+      "name": "research-paper-playbook",
+      "role": "判据资产（门脚本、短语库、方法论）",
+      "repo": "https://github.com/liuhaolong16/research-paper-playbook",
+      "version": "main@0199091",
+      "commit": "0199091f370a6c2b34976f7c990956931490c2de",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 liuhaolong16",
+      "distributed_in_repo": false,
+      "install": "clone -> receive gates/ copies -> referenced by local-paths.json"
+    },
+    {
+      "name": "paper-writing-skill",
+      "role": "全局 skill: paper-writing",
+      "repo": "https://github.com/SNL-UCSB/paper-writing-skill",
+      "version": "v3.0.1",
+      "commit": "676f8520bba54208eb4fe1d41620e365d9af6a24",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Arpit Gupta",
+      "distributed_in_repo": false,
+      "install": "clone -> copy to ~/.dsh/skills/paper-writing (drop .git)"
+    },
+    {
+      "name": "TIFS-TDSC-Writing",
+      "role": "全局 skill: tifs-tdsc-writing",
+      "repo": "https://github.com/LazyDreamingDog/TIFS-TDSC-Writing",
+      "version": "main@be90d1e",
+      "commit": "be90d1ef51e33a9e7f0048316255647b831b1f9b",
+      "license": "NOASSERTION",
+      "copyright": "上游作者（未声明许可证）",
+      "distributed_in_repo": false,
+      "install": "clone -> copy to ~/.dsh/skills/tifs-tdsc-writing (drop .git)"
+    },
+    {
+      "name": "dsh-academic-skill",
+      "role": "全局 skill: academic-paper-completion, skill-optimizer",
+      "repo": "https://github.com/TohsakaRIN521/dsh-academic-skill",
+      "version": "main@592b1fc",
+      "commit": "592b1fc74e4633c219d0a1dcc9f88c369b7f5025",
+      "license": "NOASSERTION",
+      "copyright": "上游作者（未声明许可证）",
+      "distributed_in_repo": false,
+      "install": "clone -> copy academic-paper-completion/ and skill-optimizer/ to ~/.dsh/skills (drop .git)"
+    }
+  ]
+}
